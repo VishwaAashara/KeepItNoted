@@ -1,0 +1,236 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    min-width: 80%;
+    margin: 20px auto;
+    /* border: 1px solid black;  */
+}
+
+h1 {
+    text-align: center;
+}
+
+.new-note {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input, textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.notes-list {
+    /* width: 80%; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.individual-note {
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+    padding: 30px;
+    margin: 10px;
+    background-color: white;
+    width: 25%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    min-height: 60px;
+    
+}
+
+.edit-icon, .delete-icon, .view-icon{
+    position: absolute;
+    bottom: 10px;
+}
+
+.edit-icon{
+    right: 40px;
+}
+
+.delete-icon{
+    right: 10px;
+}
+
+.view-icon{
+    right : 70px;
+}
+
+.note-title {
+    font-weight: bold;
+}
+.note-content{
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+}
+.note-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+.notes-image{
+    height: 80px;
+    width: 80px;
+    /* border: 1px solid black; */
+}
+.notes-h1 h1{
+    font-family: "Handlee", cursive;
+    font-weight: 800;
+    font-style: normal;
+    margin-left: -15px;
+    
+}
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.confirm-header h4{
+    color: black;
+}
+.modal, .view-modal, .delete-confirmation, .add-note-modal{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid green;
+    z-index: 10;
+    border-radius: 10px;
+    background-color: white;
+    max-width: 80%;
+    width: 500px;
+}
+.view-modal{
+    width: 650px;
+}
+.modal.active, .view-modal.active, .delete-confirmation.active, .add-note-modal.active{ 
+    transform: translate(-50%,-50%) scale(1);
+}
+.modal-header, .view-modal-header, .confirm-header, .add-note-modal-header{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.yes,.no{
+    width: 120px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.no{
+    background-color: red;
+}
+.no:hover{
+    background-color: darkred;
+}
+
+
+.modal-title, .view-modal-title, .add-note-modal-title{
+    font-size: 1.50rem;
+    font-weight: bold;
+}
+.modal-header .close-button , .view-modal-header .view-close-button, .add-note-modal-header .add-note-close-button{
+    font-size: 1.23rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background:none;
+    color: green;
+}
+
+.modal-body, .view-modal-body, .add-note-modal-body{ 
+    padding: 10px 15px ; color: black;
+}
+.view-modal-body{
+    padding-bottom:20px;
+
+}
+.modal-footer, .confirm-footer, .add-note-modal-footer{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+#overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 200ms ease-in-out;
+    pointer-events: none;
+}
+
+#overlay.active{
+    pointer-events: all;
+    opacity: 1;
+}
+.search-bar{
+    display: flex;
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+}
+.search-bar button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    position: absolute;
+    margin: 7px;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    cursor:pointer;
+    font-size: 15px;
+    padding: 10px;
+}
+.search-bar input{
+    /* max-width: 1600px; */
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 25px;
+    padding: 8px 40px 8px 20px;
+    /* border: none; */
+    border-radius: 30px;
+}
+.note-button{
+    border-radius: 80px;
+}
+
